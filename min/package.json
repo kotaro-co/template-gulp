@@ -1,0 +1,21 @@
+{
+  "name": "gulp-template-min",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.8.10"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-plumber": "~0.6.6",
+    "gulp-notify": "~2.0.1",
+    "gulp-webserver": "~0.8.8",
+    "gulp-compass": "~2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shimoda-bw",
+  "license": "ISC"
+}

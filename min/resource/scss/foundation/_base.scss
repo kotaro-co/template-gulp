@@ -1,0 +1,44 @@
+// ----------------------------------------------
+// Basic styles
+// ----------------------------------------------
+@charset 'utf-8';
+
+html {
+	height: 100%;
+	font-size: 10px;
+}
+body {
+	color: #333;
+	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;;
+	line-height: 1.4;
+	font-size: 10px;
+}
+input, select, textarea {
+	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;;
+}
+body > div {
+	font-size: 10px;
+}
+a {
+	color: #00aaff;
+	text-decoration: none;
+	
+	&:hover {
+		color: #00aaff;
+		text-decoration: none;
+	}
+}
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	
+	.ie8 & {
+		width: auto;
+	}
+}
+
+input, textarea {
+	margin: 0;
+	font-size: 100%;
+}
