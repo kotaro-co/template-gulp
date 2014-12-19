@@ -1,0 +1,53 @@
+//
+// アイコンフォントエレメント
+//
+// Styleguide 15
+//
+
+//
+// アイコンフォント
+//
+// Markup:
+// <i class="sz-icon sz-icon-arrow"></i>
+// <i class="sz-icon sz-icon-blank"></i>
+// <i class="sz-icon sz-icon-mimamoru"></i>
+// <i class="sz-icon sz-icon-search"></i>
+// <i class="sz-icon sz-icon-plus"></i>
+// <i class="sz-icon sz-icon-minus"></i>
+// 
+// Styleguide 15.1
+//
+@font-face {
+	font-family:"sz-fonts";
+	src:url("../fonts/myfont.eot");
+	src:url("../fonts/myfont.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/myfont.woff") format("woff"),
+		url("../fonts/myfont.ttf") format("truetype"),
+		url("../fonts/myfont.svg?#sz-fonts") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+.sz-icon {
+	font-family:"sz-fonts";
+	display:inline-block;
+	vertical-align:middle;
+	line-height:1;
+	font-weight:normal;
+	font-style:normal;
+	speak:none;
+	text-decoration:inherit;
+	text-transform:none;
+	text-rendering:optimizeLegibility;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+.sz-icon-arrow { content:"\E001"; }
+.sz-icon-blank { content:"\E002"; }
+.sz-icon-mimamoru { content:"\E003"; }
+.sz-icon-search { content:"\E004"; }
+.sz-icon-plus { content:"\E005"; }
+.sz-icon-minus { content:"\E006"; }
+.sz-icon-apply { content:"\E007"; }
+.sz-icon-request { content:"\E008"; }
+.sz-icon-freecall { content:"\E009"; }
+.sz-icon-close { content:"\E00A"; }

@@ -1,0 +1,183 @@
+// ====================================================================
+// 関数名: clearfix
+// --------------------------------------------------------------------
+// 概要: clearfix
+// 引数: 
+// 使用例: @include clearfix;
+// 備考: 
+// ====================================================================
+@mixin clearfix {
+	&:before,
+	&:after {
+		display: table;
+		content: ' ';
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// ====================================================================
+// 関数名: font-size
+// --------------------------------------------------------------------
+// 概要: フォントサイズ指定
+// 引数: 
+//   $size: サイズ（px）
+// 使用例: @include font-size(20);　※20pxの場合
+// 備考: 
+// ====================================================================
+@mixin font-size($size) {
+	font-size: $size + px;
+	font-size: ($size / 10) * 1rem;
+}
+
+
+// ====================================================================
+// 関数名: opacity-rollover
+// --------------------------------------------------------------------
+// 概要: マウスオンすると透明度を変化させる
+// 引数: 
+//   $opacityValue: 透明度、デフォルトで".7"が指定
+// 使用例: @include opacity-rollover(.5);　※透明度50%の場合
+// 備考: 
+// ====================================================================
+@mixin opacity-rollover($opacityValue: .7) {
+	-moz-transition: opacity 0.12s linear;
+	-webkit-transition: opacity 0.12s linear;
+	transition: opacity 0.12s linear;
+	&:hover{
+		@include opacity($opacityValue);
+	}
+}
+
+
+// ====================================================================
+// 関数名: hide-text
+// --------------------------------------------------------------------
+// 概要: テキストを非表示にする
+// 引数: なし
+// 使用例: @include hide-text;
+// 備考: 
+// ====================================================================
+@mixin hide-text {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+
+
+// ====================================================================
+// 関数名: show-text
+// --------------------------------------------------------------------
+// 概要: テキストを表示する
+// 引数: なし
+// 使用例: @include show-text;
+// 備考: 
+// ====================================================================
+@mixin show-text() {
+	font: inherit;
+	color: inherit;
+	text-shadow: inherit;
+	background: none;
+	border: inherit;
+}
+
+
+// ====================================================================
+// 関数名: yoko, tate
+// --------------------------------------------------------------------
+// 概要: デバイスの縦横判定
+// 引数: なし
+// 使用例:
+//   @include tate { width: 100%; }
+//   @include yoko { width: 25%; }
+// 引用元: http://book.scss.jp/code/c5/04.html
+// 備考: 
+// ====================================================================
+@mixin yoko {
+	@media all and (orientation:landscape) { @content; }
+}
+@mixin tate {
+	@media all and (orientation:portrait) { @content; }
+}
+
+
+// ====================================================================
+// 関数名: media
+// --------------------------------------------------------------------
+// 概要: ブレイクポイント毎のメディアクエリ
+// 引数: 
+//   pc:     PC幅（960px以上）
+//   tab:    タブレット幅（960px〜480px）
+//   sp:     スマートフォン幅（480px以下）
+//   [幅]px: 指定幅（[幅]px以下）
+// 使用例: 
+//   @include media(pc) { width: 960px; }
+//   @include media(tab) { width: 100%; }
+//   @include media(sp) { width: auto; }
+//   @include media(640px) { width: 640px; }
+// 引用元: http://book.scss.jp/code/c5/04.html
+// 備考: 
+// ====================================================================
+@mixin media($media-width) {
+	// ブレイクポイントを設定（固定値）
+	$bp-pc: 960px;
+	$bp-sp: 480px;
+
+	@if $media-width == pc {
+		@media only screen and (min-width: $bp-pc) { @content; }
+	}
+	@else if $media-width == tab {
+		@media only screen and (max-width: $bp-pc) { @content; }
+	}
+	@else if $media-width == sp {
+		@media only screen and (max-width: $bp-sp) { @content; }
+	}
+	@else {
+		@media only screen and (max-width: $media-width) { @content; }
+	}
+}
+
+
+// ====================================================================
+// 関数名: ellipsis
+// --------------------------------------------------------------------
+// 概要: 領域からはみ出したテキストを「…（省略記号）」にす
+// 引数: 
+//   $width: 幅（px）
+// 使用例:
+//   @include ellipsis()
+// 引用元:
+// 備考: 
+// ====================================================================
+@mixin ellipsis($width: 100%) {
+	@if($width != null) {
+		width: $width;
+	}
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+// ====================================================================
+// 関数名: parseInt
+// --------------------------------------------------------------------
+// 概要: 単位を外す関数
+// 引数: 
+//   val: PC幅〜タブレット幅（1024px〜768px）
+// 使用例: 
+//   //フォントサイズ指定 (rem)のmixin
+//   @mixin font-size-rem($size) {
+//     font-size: parseInt($size) + px;
+//     font-size: (parseInt($size) / 10) * 1rem;
+//   }
+// 引用元: http://c-brains.jp/blog/wsg/13/05/27-174103.php
+// 備考: 
+// ====================================================================
+@function parseInt($val) {
+	@return $val / (1 + $val - $val);
+}

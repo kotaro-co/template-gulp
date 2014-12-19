@@ -1,0 +1,141 @@
+//
+// 調整用クラス
+//
+// Styleguide 20
+//
+
+//
+// 余白調整用
+//
+// * u-mt0　〜　u-mt100　：　上マージン0px〜100pxまで（5px単位）
+// * u-mb0　〜　u-mb100　：　下マージン0px〜100pxまで（5px単位）
+// * u-pt0　〜　u-pt100　：　上パディング0px〜100pxまで（5px単位）
+// * u-pb0　〜　u-pb100　：　下パディング0px〜100pxまで（5px単位）
+//
+// Markup:
+// <p class="u-mb5">下マージン5px</p>
+// <p class="u-mb20">下マージン20px</p>
+// <p class="u-mb40">下マージン40px</p>
+// 
+// Styleguide 20.1
+//
+$spaceClass:   true !default;   //使う,使わない：true,false
+$spacePadding: true !default;  //使う,使わない：true,false
+$endValue:     20 !default;     //生成するclassの数
+
+@if $spaceClass {
+	@for $i from 0 through $endValue {
+		.u-mt#{$i * 5} {
+			margin-top: 5px * $i !important;
+		}
+		.u-mb#{$i * 5} {
+			margin-bottom: 5px * $i !important;
+		}
+		@if $spacePadding {
+			.u-pt#{$i * 5} {
+				padding-top: 5px * $i !important;
+			}
+			.u-pb#{$i * 5} {
+				padding-bottom: 5px * $i !important;
+			}
+		}
+	}
+}
+
+//
+// スクリーンサイズに応じてソースの出し分け
+//
+// * data-show-screen="sp" : スクリーン幅 `639px` 以下で表示したいコンテンツ
+// * data-show-screen="pc" : スクリーン幅 `640px` 以上で表示したいコンテンツ
+// * data-show-display="inline" : スクリーン幅 `640px` 以上で表示したときに、`display: inline` を指定
+// * data-show-display="inline-block" : スクリーン幅 `640px` 以上で表示したときに、`display: inline-block` を指定
+//
+// Markup:
+// <div data-show-screen="sp">スクリーン幅 639px 以下で表示</div>
+// <div data-show-screen="pc">スクリーン幅 640px 以上で表示</div>
+// 
+// Styleguide 20.2
+//
+[data-show-screen="sp"] {
+	@include media(pc) {
+		display: none!important;
+	}
+}
+[data-show-screen="pc"] {
+	display: none!important;
+	
+	@include media(pc) {
+		display: block!important;
+	}
+}
+[data-show-display="inline-block"] {
+	@include media(pc) {
+		display: inline-block;
+	}
+}
+[data-show-display="inline"] {
+	@include media(pc) {
+		display: inline;
+	}
+}
+
+//
+// ロールオーバー
+//
+// `class="hover"` を付与  
+// `:hover` で `opacity: 0.6`
+//
+// Markup:
+// <a href="#" class="hover"><img src="/common/images/bnr-christmas.jpg" alt=""></a>
+// 
+// Styleguide 20.3
+//
+.hover {
+	opacity: 1;
+	transition: opacity 0.1s ease-in-out;
+	backface-visibility: hidden;
+	
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+//
+// テキスト揃え
+//
+// Markup:
+// <p class="u-tal">左寄せ</p>
+// <p class="u-tac">中央寄せ</p>
+// <p class="u-tar">右寄せ</p>
+// 
+// Styleguide 20.4
+//
+.u-tal {
+	text-align: left;
+}
+.u-tac {
+	text-align: center;
+}
+.u-tar {
+	text-align: right;
+}
+
+//
+// 改行位置のコントロール
+//
+// SP幅時、`display: inline-block` で任意の位置で改行
+//
+// Markup:
+// <span class="auto-br">Lorem ipsum dolor sit amet, </span>
+// <span class="auto-br">consectetur adipisicing elit. </span>
+// <span class="auto-brBlock">Lorem ipsum dolor sit amet, </span>
+// <span class="auto-brBlock">consectetur adipisicing elit. </span>
+//
+// Styleguide 20.5
+//
+.auto-br {
+	display: inline-block;
+}
+.auto-brBlock {
+	display: block;
+}

@@ -1,0 +1,25 @@
+// ----------------------------------------
+// spritesmith で生成された sprite を　1/2 に変換
+// ----------------------------------------
+
+@mixin sprite-2x-width($sprite) {
+	width: nth($sprite, 5)/2;
+}
+@mixin sprite-2x-height($sprite) {
+	height: nth($sprite, 6)/2;
+}
+@mixin sprite-2x-position($sprite) {
+	$sprite-offset-x: nth($sprite, 3)/2;
+	$sprite-offset-y: nth($sprite, 4)/2;
+	background-position: $sprite-offset-x $sprite-offset-y;
+}
+@mixin sprite-2x-size($sprite) {
+	background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+}
+@mixin sprite-2x($sprite) {
+	@include sprite-image($sprite);
+	@include sprite-2x-position($sprite);
+	@include sprite-2x-width($sprite);
+	@include sprite-2x-height($sprite);
+	@include sprite-2x-size($sprite); 
+}

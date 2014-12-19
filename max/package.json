@@ -1,0 +1,31 @@
+{
+  "name": "gulp-template-min",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.8.10"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-plumber": "~0.6.6",
+    "gulp-notify": "~2.0.1",
+    "gulp-webserver": "~0.8.8",
+    "gulp-compass": "~2.0.3",
+    "run-sequence": "~1.0.2",
+    "gulp-jshint": "~1.9.0",
+    "jshint-stylish": "~1.0.0",
+    "gulp-uglify": "~1.0.2",
+    "gulp-imagemin": "~2.0.0",
+    "gulp-concat": "~2.4.2",
+    "gulp-iconfont": "~1.0.0",
+    "gulp-kss": "0.0.2",
+    "gulp.spritesmith": "~2.0.1",
+    "gulp-shell": "~0.2.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shimoda-bw",
+  "license": "ISC"
+}
