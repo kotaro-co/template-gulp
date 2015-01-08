@@ -104,12 +104,12 @@ gulp.task('task-jshint', function () {
 });
 
 gulp.task('task-jscopy', function() {
-	return gulp.src('resource/js/*.js')
+	return gulp.src('resource/js/*.js',{buffer:false})
 		.pipe(gulp.dest('deploy/assets/js'));
 });
 
 gulp.task('task-jsuglify', function() {
-	return gulp.src('resource/js/*.js')
+	return gulp.src('resource/js/*.js',{buffer:false})
 		.pipe(uglify({
 			preserveComments: 'some'
 		}))
