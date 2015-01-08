@@ -11,7 +11,6 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var iconfont = require('gulp-iconfont');
-var gulpkss = require('gulp-kss');
 var spritesmith = require('gulp.spritesmith');
 var exec = require('child_process').exec; //required gulp-shell
 

@@ -19,7 +19,6 @@
     "gulp-imagemin": "~2.0.0",
     "gulp-concat": "~2.4.2",
     "gulp-iconfont": "~1.0.0",
-    "gulp-kss": "0.0.2",
     "gulp.spritesmith": "~2.0.1",
     "gulp-shell": "~0.2.11"
   },
