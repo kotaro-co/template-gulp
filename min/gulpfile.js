@@ -27,7 +27,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('resource/scss/*.scss', ['compass']);
+	gulp.watch('resource/scss/**/*.scss', ['compass']);
 });
 
 gulp.task('default', ['compass','webserver','watch']);

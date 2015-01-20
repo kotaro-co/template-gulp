@@ -144,7 +144,7 @@ gulp.task('task-webserver', function() {
 
 //watch
 gulp.task('task-watch', function () {
-	gulp.watch('resource/scss/*.scss', ['task-css-debug']);
+	gulp.watch('resource/scss/**/*.scss', ['task-css-debug']);
 	gulp.watch('resource/js/**/*.js',['task-js-debug']);
 });
 
