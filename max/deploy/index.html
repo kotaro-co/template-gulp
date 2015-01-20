@@ -1,9 +1,44 @@
-<html>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8" lang="ja"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="ja"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="modern" lang="ja"><!--<![endif]-->
 <head>
-<title>Test Page</title>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="format-detection" content="telephone=no">
+<title>$title$</title>
+<meta name="description" content="$description$" />
+<meta name="keywords" content="$keywords$" />
+<meta property="og:title" content="$og:title$">
+<meta property="og:description" content="$og:description$">
+<meta property="og:url" content="$og:url$">
+<meta property="og:image" content="$og:image$">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="website">
+<meta name="robots" content="all">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="canonical" href="$canonical$">
+<link rel="alternate" type="application/atom+xml" href="/sitemap.xml">
+<link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/page.css">
+<!--[if lt IE 9]>
+<script src="/assets/js/libs/html5.js"></script>
+<script src="/assets/js/libs/css3-mediaqueries.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/assets/js/head.js"></script>
 </head>
-<body>
-<h1>Hello! world</h1>
+<body data-category="categoryName">
+<!--#include virtual="/assets/inc/gtm.html"-->
+<div class="l-container">
+	<!--#include virtual="/assets/inc/header.html"-->
+	<div class="l-main-wrapeer">
+		<article class="l-main" role="main">
+		</article>
+		<!--#include virtual="/assets/inc/sidebar.html"-->
+	<!-- /.l-main-wrapeer --></div>
+	<!--#include virtual="/assets/inc/footer.html"-->
+<!-- /.l-container --></div>
+<script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
 </html>
